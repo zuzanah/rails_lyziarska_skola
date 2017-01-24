@@ -1,0 +1,22 @@
+<%= form_for [@rating, rcomment] do |f| %>
+  <% if rcomment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rcomment.errors.count, "error") %> prohibited this rcomment from being saved:</h2>
+
+      <ul>
+      <% rcomment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -21,7 +21,7 @@
   </thead>
 
   <tbody>
-    <% (@rating.comments).each do |com|  %>
+    <% (@rating.rcomments).each do |com|  %>
       <tr>
         <td><%= com.body %></td>
         <td><%= com.user.nickname %></td>
@@ -31,5 +31,5 @@
   </tbody>
 </table>
 
-<%= link_to 'Add Comment', new_rating_comment_path(@rating) %><br>
+<%= link_to 'Add Comment', new_rating_rcomment_path(@rating) %><br>
 <%= link_to 'Back', ratings_path %>
