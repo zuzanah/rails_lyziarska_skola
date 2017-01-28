@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vaše rezervácie</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Začiatok lekcie</th>
+      <th>Trvanie lekcie</th>
+      <th>Inštruktor</th>
+      <th>Cena</th>
+      <th>Poznámky</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.start %></td>
+        <td><%= "50 minút" %></td>
+        <td><%= booking.instructor_id %></td>
+        <td><%= booking.child ? "20€" : "23€" %></td>
+        <td><%= booking.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

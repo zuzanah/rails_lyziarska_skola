@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Meno:</strong>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <strong>Typ:</strong>
+  <%= @instructor.instructor_type == "ski" ? "Lyžovanie" : "Snowboard" %>
+</p>
+
+<%= link_to 'Rezervovať lekciu', new_instructor_booking_path(@instructor) %>
+<br>
+<%= link_to 'Dozadu', instructors_path %>

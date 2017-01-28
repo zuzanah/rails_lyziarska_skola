@@ -1,0 +1,2 @@
+class Skinew < ApplicationRecord
+end

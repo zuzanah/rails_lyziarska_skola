@@ -15,7 +15,14 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
         column do
-        # ...
+          panel "Aktuality" do
+            table_for Skinew.order("created_at desc").limit(5) do
+              column "Nazov", :title
+              column "Obsah", :body
+              column "Vložené", :created_at
+            end
+            strong { link_to "Zobraziť všetky aktuality", admin_skinews_index_path }
+          end
         end
       end
 

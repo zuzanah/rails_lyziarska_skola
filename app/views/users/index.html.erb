@@ -1,3 +1,9 @@
 <h1>HLAVNA STRANKA</h1>
 
-<%= link_to "Hodnotenie", ratings_path(@list), class: 'btn btn-success' %>
+<%= link_to "Hodnotenie", ratings_path, class: 'btn btn-success' %>
+<br>
+<%= link_to "Aktuality", skinews_index_path, class: 'btn btn-success' %>
+<br>
+<%= link_to "Inštruktori", instructors_path, class: 'btn btn-success' %>
+<br>
+<%= link_to 'Rezervovať lekciu', new_user_booking_path(current_user) %>

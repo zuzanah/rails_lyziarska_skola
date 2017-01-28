@@ -1,0 +1,40 @@
+<%= form_for [@user, booking] do |f| %>
+  <% if booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start, 'Začiatok lekcie' %>
+    <%= f.datetime_select :start, :use_month_names => ['Január', 'Február', 'Marec', 'Apríl', 'Máj', 'Jún', 'Júl', 'August', 'September', 'Október', 'November','December'], :discard_minute => true, :start_hour => 9, :end_hour => 15, :prompt => {day: 'Den', month: 'Mesiac', year: 'Rok'} %>
+  </div>
+
+  </div>
+
+  <div class="field">
+    <%= f.label :body, 'Poznámky' %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instructor_id, 'Instruktor' %>
+    <%= f.collection_select :instructor_id, Instructor.all, :id, :name, {:prompt => "Zvolte instruktora"}  %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Dieťa do 15 rokov?" %>
+    <%= f.radio_button :child, true, :checked => true %> áno
+    <%= f.radio_button :child, false %> nie <br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Vytvoriť rezerváciu" %>
+  </div>
+<% end %>

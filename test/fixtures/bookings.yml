@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2017-01-25 20:06:12
+  user: one
+  instructor: one
+  body: MyText
+
+two:
+  start: 2017-01-25 20:06:12
+  user: two
+  instructor: two
+  body: MyText

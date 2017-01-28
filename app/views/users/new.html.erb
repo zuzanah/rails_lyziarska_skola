@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1>Registrácia</h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -13,22 +13,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nickname %><br />
+    <%= f.label :nickname, "užívateľské meno" %><br />
     <%= f.text_field :nickname %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "e-mail" %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password, "heslo" %><br />
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "potvrdenie hesla" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions"><%= f.submit %></div>
+  <div class="actions"><%= f.submit "Zaregistrovať sa" %></div>
 <% end %>
 
-<%= link_to 'Back', ratings_path %>
+<%= link_to 'Dozadu', ratings_path %>

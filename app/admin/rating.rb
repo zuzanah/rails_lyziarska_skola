@@ -22,6 +22,9 @@ ActiveAdmin.register Rating do
       column "Komentár", :body
       column "Vložené", :created_at
     end
+    div do
+      link_to('Back', admin_ratings_path)
+    end
   end
   
 end

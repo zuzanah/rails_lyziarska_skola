@@ -20,11 +20,11 @@
     <div id="container">
       <div id="user_header">
         <% if current_user %>
-          Logged in as <%= current_user.nickname %>.
-          <%= link_to "Log Out", logout_path %>
+          <div align="right">Prihlásený ako <%= current_user.nickname %>.</div>
+          <div align="right"><%= link_to "Odhlásiť", logout_path %></div>
         <% else %>
-          <%= link_to "Sign Up", signup_path %> or
-          <%= link_to "Log In", login_path %>
+          <%= link_to "Registrácia", signup_path %> /
+          <%= link_to "Prihlásiť", login_path %>
         <% end %>
       </div>
 
