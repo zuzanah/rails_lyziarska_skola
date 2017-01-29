@@ -3,13 +3,18 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @user = current_user
   end
 
   def show
   end
 
+  def type
+  end
+
   def new
     @user = current_user
+    @instructor = Instructor.find(params[:instructor_id])
     @booking = Booking.new
   end
 
@@ -18,7 +23,9 @@ class BookingsController < ApplicationController
 
   def create
     @user = current_user
-    @booking = @user.bookings.create(booking_params)
+    @instructor = Instructor.find(params[:instructor_id])
+    @booking = @instructor.bookings.create(booking_params)
+    @booking.user_id = @user.id
 
     respond_to do |format|
       if @booking.save
@@ -52,6 +59,6 @@ class BookingsController < ApplicationController
     end
 
     def booking_params
-      params.require(:booking).permit(:start, :user, :instructor, :body, :child)
+      params.require(:booking).permit(:startdate, :starttime, :user, :instructor, :body, :child)
     end
 end

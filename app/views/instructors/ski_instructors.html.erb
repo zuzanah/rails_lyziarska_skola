@@ -1,0 +1,24 @@
+<h1>Inštruktori lyžovania</h1>
+<h3>Zvoľte inštruktora</h3>
+
+<table>
+        <thead>
+          <tr>
+            <th>Meno</th>
+            <th>Typ</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @ski_instructors.each do |instructor| %>
+            <tr>
+              <td><%= instructor.name %></td>
+              <td><%= instructor.instructor_type %></td>
+              <td><%= link_to 'Rezervuj', new_instructor_booking_path(instructor) %></td>
+            </tr>
+          <% end %>
+  </tbody>
+</table>
+
+<%= button_to "Dozadu", type_path, :method => "get" %> 

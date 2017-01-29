@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Deň</th>
       <th>Začiatok lekcie</th>
       <th>Trvanie lekcie</th>
       <th>Inštruktor</th>
@@ -15,11 +16,13 @@
   </thead>
 
   <tbody>
-    <% @bookings.each do |booking| %>
+    <% @user.bookings.each do |booking| %>
+       <% instructor = Instructor.find(booking.instructor_id) %>
       <tr>
-        <td><%= booking.start %></td>
+        <td><%= booking.startdate %></td>
+        <td><%= booking.starttime.strftime("%H:%M") %></td>
         <td><%= "50 minút" %></td>
-        <td><%= booking.instructor_id %></td>
+        <td><%= instructor.name %></td>
         <td><%= booking.child ? "20€" : "23€" %></td>
         <td><%= booking.body %></td>
       </tr>
@@ -27,4 +30,3 @@
   </tbody>
 </table>
 
-<br>

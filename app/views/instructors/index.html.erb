@@ -28,7 +28,7 @@
             <tr>
               <td><%= instructor.name %></td>
               <td><%= instructor.instructor_type %></td>
-              <td><%= link_to 'Show', instructor %></td>
+              <td><%= link_to 'Zobraziť detail', instructor %></td>
             </tr>
           <% end %>
   </tbody>
@@ -49,7 +49,7 @@
               <tr>
                 <td><%= instructor.name %></td>
                 <td><%= instructor.instructor_type %></td>
-                <td><%= link_to 'Show', instructor %></td>
+                <td><%= link_to 'Zobraqziť detail', instructor %></td>
               </tr>
             <% end %>
           </tbody>
@@ -58,5 +58,5 @@
   </tbody>
 </table>
 
-<%= link_to 'Dozadu', users_path %>
+<%= button_to "Dozadu", users_path, :method => "get" %> 
 

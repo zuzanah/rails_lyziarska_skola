@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vase hodnotenia</h1>
+<h1>Hodnotenia</h1>
 
 <table>
   <thead>
     <tr>
       <th>Hodnotenie</th>
-      <th>Uzivatel</th>
-      <th>Vlozene</th>
+      <th>Užívateľ</th>
+      <th>Vložené</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= rating.body %></td>
         <td><%= rating.user.nickname %></td>
         <td><%= rating.created_at.strftime("%b %d, %Y") %></td>
-        <td><%= link_to 'Show', rating %></td>
+        <td><%= link_to 'Zobraziť', rating %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +26,5 @@
 
 <br>
 
-<%= link_to 'New Rating', new_rating_path %><br>
-<%= link_to 'Back', root_path %>
+<%= button_to "Ohodnoťte nás", new_rating_path, :method => "get" %> <br>
+<%= button_to "Dozadu", root_path, :method => "get" %> <br>

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Skinews</h1>
+<h1>Aktuality</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Vlozene</th>
+      <th>Názov</th>
+      <th>Popis</th>
+      <th>Vložené</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +18,10 @@
         <td><%= skinews.title %></td>
         <td><%= skinews.body %></td>
         <td><%= skinews.created_at.strftime("%b %d, %Y") %></td>
-        <td><%= link_to 'Show', skinews %></td>
+        <td><%= link_to 'Zobraziť', skinews %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Back', root_path %>
+<%= button_to "Dozadu", root_path, :method => "get" %> <br>

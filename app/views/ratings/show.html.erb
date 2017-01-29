@@ -6,16 +6,16 @@
 </p>
 
 <p>
-  <strong>Uzivatel:</strong>
+  <strong>Užívateľ:</strong>
   <%= @rating.user.nickname %>
 </p>
 
 <table>
   <thead>
     <tr>
-      <th>Komentar</th>
-      <th>Uzivatel</th>
-      <th>Vlozene</th>
+      <th>Komentár</th>
+      <th>Užívateľ</th>
+      <th>Vložené</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,5 +31,7 @@
   </tbody>
 </table>
 
-<%= link_to 'Add Comment', new_rating_rcomment_path(@rating) %><br>
-<%= link_to 'Back', ratings_path %>
+<%= button_to "Pridať komentár", new_rating_rcomment_path(@rating), :method => "get" %> <br>
+<%= button_to "Dozadu", ratings_path, :method => "get" %> <br>
+
+

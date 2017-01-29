@@ -8,8 +8,8 @@
 <p>
   <strong>Typ:</strong>
   <%= @instructor.instructor_type == "ski" ? "Lyžovanie" : "Snowboard" %>
-</p>
+</p> 
 
-<%= link_to 'Rezervovať lekciu', new_instructor_booking_path(@instructor) %>
+<%= current_user ? (button_to 'Rezervovať lekciu', new_instructor_booking_path(@instructor), :method => "get") : () %>
 <br>
-<%= link_to 'Dozadu', instructors_path %>
+<%= button_to "Dozadu", instructors_path, :method => "get" %> 

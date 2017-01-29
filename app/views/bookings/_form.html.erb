@@ -1,4 +1,4 @@
-<%= form_for [@user, booking] do |f| %>
+<%= form_for [@instructor, booking] do |f| %>
   <% if booking.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
@@ -12,20 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :start, 'Začiatok lekcie' %>
-    <%= f.datetime_select :start, :use_month_names => ['Január', 'Február', 'Marec', 'Apríl', 'Máj', 'Jún', 'Júl', 'August', 'September', 'Október', 'November','December'], :discard_minute => true, :start_hour => 9, :end_hour => 15, :prompt => {day: 'Den', month: 'Mesiac', year: 'Rok'} %>
+    <%= f.label :startdate, 'Deň' %>
+    <%= f.date_select :startdate, {:use_month_names => ['Január', 'Február', 'Marec', 'Apríl', 'Máj', 'Jún', 'Júl', 'August', 'September', 'Október', 'November', 'December']} %>
   </div>
 
+  <div class="field">
+    <%= f.label :starttime, 'Začiatok lekcie' %>
+    <%= f.time_select :starttime %>
   </div>
 
   <div class="field">
     <%= f.label :body, 'Poznámky' %>
     <%= f.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= f.label :instructor_id, 'Instruktor' %>
-    <%= f.collection_select :instructor_id, Instructor.all, :id, :name, {:prompt => "Zvolte instruktora"}  %>
   </div>
 
   <div class="field">

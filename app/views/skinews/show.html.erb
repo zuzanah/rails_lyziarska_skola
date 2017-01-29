@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Názov:</strong>
   <%= @skinews.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Popis:</strong>
   <%= @skinews.body %>
 </p>
 
-<%= link_to 'Back', skinews_index_path %>
+<%= button_to "Dozadu", skinews_index_path, :method => "get" %> <br>

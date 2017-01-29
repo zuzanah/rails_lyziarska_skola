@@ -1,9 +1,8 @@
-<h1>HLAVNA STRANKA</h1>
+<h1 align="center", style="font-family:verdana;">LYŽIARSKA ŠKOLA</h1>
 
-<%= link_to "Hodnotenie", ratings_path, class: 'btn btn-success' %>
-<br>
-<%= link_to "Aktuality", skinews_index_path, class: 'btn btn-success' %>
-<br>
-<%= link_to "Inštruktori", instructors_path, class: 'btn btn-success' %>
-<br>
-<%= link_to 'Rezervovať lekciu', new_user_booking_path(current_user) %>
+<%= image_tag('skiing.gif', style: "height: 300px; width: 300px", align: "right") %>
+
+<%= button_to "Hodnotenie", ratings_path, :method => "get" %> <br>
+<%= button_to "Aktuality", skinews_index_path, :method => "get" %> <br>
+<%= button_to "Inštruktori", instructors_path, :method => "get" %> <br>
+<%= button_to "Rezervovať lekciu", (current_user ? new_user_booking_path(current_user) : signup_path), :method => "get" %>

@@ -36,6 +36,10 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'rename'
 
+gem 'haml-rails'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

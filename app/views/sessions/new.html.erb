@@ -11,4 +11,5 @@
   </div>
   <div class="actions"><%= submit_tag "Prihlásiť sa" %></div>
 <% end %>
-<%= link_to 'Dozadu', users_path %>
+
+<%= button_to "Dozadu", users_path, :method => "get" %> <br>

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'type', to: 'bookings#type', as: 'type'
+  get 'ski_instructors', to: 'instructors#ski_instructors', as: 'ski_instructors'
+  get 'snb_instructors', to: 'instructors#snb_instructors', as: 'snb_instructors'
 
   resources :users, :only => [:create, :index, :new] do
     resources :bookings
