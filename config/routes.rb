@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   end
   resources :skinews, :only => [:index, :show]
   resources :instructors, :only => [:index, :show] do
-    resources :bookings, :only => [:index, :show, :new, :create]
+    resources :bookings, :only => [:show, :new, :create]
+    member do
+      get :pom
+    end
   end
 
   root 'users#index'

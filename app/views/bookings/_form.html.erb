@@ -13,23 +13,23 @@
 
   <div class="field">
     <%= f.label :startdate, 'Deň' %>
-    <%= f.date_select :startdate, {:use_month_names => ['Január', 'Február', 'Marec', 'Apríl', 'Máj', 'Jún', 'Júl', 'August', 'September', 'Október', 'November', 'December']} %>
+    <%= f.date_field :startdate, min: Date.today+1, max: "2017-04-1" %>
   </div>
 
   <div class="field">
     <%= f.label :starttime, 'Začiatok lekcie' %>
-    <%= f.time_select :starttime %>
+    <%= f.time_select :starttime, start_hour: 9, end_hour: 15, minute_step: 60 %>
   </div>
 
   <div class="field">
-    <%= f.label :body, 'Poznámky' %>
+    <%= f.label :body, 'Poznámky:' %> <br/>
     <%= f.text_area :body %>
   </div>
 
   <div class="field">
-    <%= f.label "Dieťa do 15 rokov?" %>
+    <%= f.label "Dieťa do 15 rokov?" %> <br/>
     <%= f.radio_button :child, true, :checked => true %> áno
-    <%= f.radio_button :child, false %> nie <br />
+    <%= f.radio_button :child, false %> nie <br/>
   </div>
 
   <div class="actions">

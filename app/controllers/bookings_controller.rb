@@ -26,10 +26,16 @@ class BookingsController < ApplicationController
     @instructor = Instructor.find(params[:instructor_id])
     @booking = @instructor.bookings.create(booking_params)
     @booking.user_id = @user.id
-
+  
     respond_to do |format|
       if @booking.save
-        format.html { redirect_to user_bookings_path(@user), notice: 'Booking was successfully created.' }
+        if (!Booking.where(instructor: @instructor, startdate: @booking.startdate, starttime: @booking.starttime).where.not(id: @booking.id).empty?)
+          @booking.destroy
+          @reserved = Booking.where(instructor: @instructor, startdate: @booking.startdate)
+          render 'instructors/pom'
+        else
+          format.html { redirect_to user_bookings_path(@user), notice: 'Booking was successfully created.' }
+        end
       else
         format.html { render :new }
       end

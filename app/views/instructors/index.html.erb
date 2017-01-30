@@ -27,7 +27,6 @@
           <% @ski_instructors.each do |instructor| %>
             <tr>
               <td><%= instructor.name %></td>
-              <td><%= instructor.instructor_type %></td>
               <td><%= link_to 'Zobraziť detail', instructor %></td>
             </tr>
           <% end %>
@@ -48,8 +47,7 @@
             <% @snb_instructors.each do |instructor| %>
               <tr>
                 <td><%= instructor.name %></td>
-                <td><%= instructor.instructor_type %></td>
-                <td><%= link_to 'Zobraqziť detail', instructor %></td>
+                <td><%= link_to 'Zobraziť detail', instructor %></td>
               </tr>
             <% end %>
           </tbody>
