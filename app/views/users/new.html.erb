@@ -1,5 +1,5 @@
 <h1>Registrácia</h1>
-
+<p>Pokiaľ chcete pridávať hodnotenia, komentáre a rezervovať lekcie, musíte sa zaregistrovať.</p>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nickname, "užívateľské meno" %><br />
+    <%= f.label :nickname, "Užívateľské meno" %><br />
     <%= f.text_field :nickname %>
   </div>
   <div class="field">
@@ -21,11 +21,11 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password, "heslo" %><br />
+    <%= f.label :password, "Heslo" %><br />
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation, "potvrdenie hesla" %><br />
+    <%= f.label :password_confirmation, "Potvrdenie hesla" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions"><%= f.submit "Zaregistrovať sa" %></div>

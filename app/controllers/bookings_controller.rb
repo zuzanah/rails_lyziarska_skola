@@ -2,14 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookings = Booking.all
     @user = current_user
-  end
-
-  def show
-  end
-
-  def type
+    @user_bookings = @user.bookings.order("startdate asc, starttime asc")
   end
 
   def new
@@ -19,6 +13,8 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @instructor = @booking.instructor
   end
 
   def create
@@ -32,9 +28,9 @@ class BookingsController < ApplicationController
         if (!Booking.where(instructor: @instructor, startdate: @booking.startdate, starttime: @booking.starttime).where.not(id: @booking.id).empty?)
           @booking.destroy
           @reserved = Booking.where(instructor: @instructor, startdate: @booking.startdate)
-          render 'instructors/pom'
+          format.html { render 'instructors/reserved' }
         else
-          format.html { redirect_to user_bookings_path(@user), notice: 'Booking was successfully created.' }
+          format.html { redirect_to user_bookings_path(@user), notice: 'Vaša rezervácia bola úspešne vytvorená.' }
         end
       else
         format.html { render :new }
@@ -43,9 +39,10 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @user = current_user
     respond_to do |format|
       if @booking.update(booking_params)
-        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
+        format.html { redirect_to user_bookings_path(@user), notice: 'Rezervácia bola zmenená.' }
       else
         format.html { render :edit }
       end
@@ -53,9 +50,10 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
+      format.html { redirect_to user_bookings_path(@user), notice: 'Rezervácia bola odstránená.' }
     end
   end
 

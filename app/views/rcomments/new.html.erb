@@ -1,5 +1,5 @@
-<h1>New Comment</h1>
+<h1>Pridajte komentár</h1>
 
 <%= render 'form', rcomment: @rcomment %>
 
-<%= link_to 'Back', rating_path(@rating) %>
+<%= button_to "Dozadu", rating_path(@rating), :method => "get" %>

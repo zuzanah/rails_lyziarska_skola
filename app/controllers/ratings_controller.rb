@@ -7,6 +7,7 @@ class RatingsController < ApplicationController
 
   def show
     @rating = Rating.find(params[:id])
+    @comments = @rating.rcomments.order("created_at desc")
   end
 
   def new

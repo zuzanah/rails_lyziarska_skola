@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   end
   resources :skinews, :only => [:index, :show]
   resources :instructors, :only => [:index, :show] do
-    resources :bookings, :only => [:show, :new, :create]
+    resources :bookings
     member do
-      get :pom
+      get :reserved
     end
   end
 

@@ -1,5 +1,5 @@
-<h1>New Rating</h1>
+<h1>Pridajte hodnotenie</h1>
 
 <%= render 'form', rating: @rating %>
 
-<%= link_to 'Back', ratings_path %>
+<%= button_to "Dozadu", ratings_path, :method => "get" %>

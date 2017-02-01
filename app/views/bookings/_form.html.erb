@@ -1,18 +1,14 @@
 <%= form_for [@instructor, booking] do |f| %>
   <% if booking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
-
       <ul>
-      <% booking.errors.full_messages.each do |message| %>
+      <% message = booking.errors.first[1] %>
         <li><%= message %></li>
-      <% end %>
       </ul>
-    </div>
+
   <% end %>
 
   <div class="field">
-    <%= f.label :startdate, 'Deň' %>
+    <%= f.label :startdate, 'Dátum' %>
     <%= f.date_field :startdate, min: Date.today+1, max: "2017-04-1" %>
   </div>
 

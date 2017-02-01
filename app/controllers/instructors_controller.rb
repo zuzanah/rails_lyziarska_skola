@@ -23,7 +23,7 @@ class InstructorsController < ApplicationController
     @user = current_user
   end
 
-  def pom
+  def reserved
     @instructor = Instructor.find(params[:id])
   end
 
