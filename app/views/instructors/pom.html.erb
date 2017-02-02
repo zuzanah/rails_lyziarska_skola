@@ -1,8 +1,0 @@
-<p id="notice"><%= notice %></p>
-<h5>Ľutujeme, ale inštruktor(ka) <%= @instructor.name %> je <%= @booking.startdate.strftime("%d.%m. %Y") %> v nasledujúcich časoch obsadený(á):
-    <% @reserved.each do |booking| %>
-       <li> - <%= booking.starttime.strftime("%H:%M") %> </li>
-    <% end %>
-Vyberte si prosím iný termín, alebo zvoľte iného inštruktora. </h5>
-<%= button_to "Zmeniť termín", new_instructor_booking_path(@instructor), :method => "get" %> </br>
-<%= button_to "Späť nová rezervácia", type_path, :method => "get" %>
