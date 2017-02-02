@@ -1,28 +1,25 @@
-<p id="notice"><%= notice %></p>
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 
 <h1>Naši inštruktori</h1>
 
-
-<table>
+<div align="center">
+  <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Lyžovanie</th>
-      <th>Snowboard</th>
-      <th colspan="3"></th>
+      <th class="text-center">LYŽOVANIE</th>
+      <th class="text-center">SNOWBOARD</th>
     </tr>
   </thead>
-
   <tbody>
     <td>  
-      <table>
+      <table class="table table-bordered table-stripped">
         <thead>
           <tr>
             <th>Meno</th>
             <th>Typ</th>
-            <th colspan="3"></th>
           </tr>
         </thead>
-
         <tbody>
           <% @ski_instructors.each do |instructor| %>
             <tr>
@@ -30,31 +27,30 @@
               <td><%= link_to 'Zobraziť detail', instructor %></td>
             </tr>
           <% end %>
-  </tbody>
-</table>
+        </tbody>
+      </table>
     </td>
-      <td> 
-        <table>
-          <thead>
+    <td> 
+      <table class="table table-bordered table-stripped">
+        <thead>
+          <tr>
+            <th>Meno</th>
+            <th>Typ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @snb_instructors.each do |instructor| %>
             <tr>
-              <th>Meno</th>
-              <th>Typ</th>
-              <th colspan="3"></th>
+              <td><%= instructor.name %></td>
+              <td><%= link_to 'Zobraziť detail', instructor %></td>
             </tr>
-          </thead>
-
-          <tbody>
-            <% @snb_instructors.each do |instructor| %>
-              <tr>
-                <td><%= instructor.name %></td>
-                <td><%= link_to 'Zobraziť detail', instructor %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </td>
+          <% end %>
+        </tbody>
+      </table>
+    </td>
   </tbody>
-</table>
+  </table>
+</div>
 
 <%= button_to "Dozadu", root_path, :method => "get" %> 
-
+</body>

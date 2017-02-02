@@ -1,5 +1,8 @@
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 <h1>Pridajte hodnotenie</h1>
 
 <%= render 'form', rating: @rating %>
 
 <%= button_to "Dozadu", ratings_path, :method => "get" %>
+</body>

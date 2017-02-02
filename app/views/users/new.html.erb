@@ -1,3 +1,5 @@
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 <h1>Registrácia</h1>
 <p>Pokiaľ chcete pridávať hodnotenia, komentáre a rezervovať lekcie, musíte sa zaregistrovať.</p>
 <%= form_for @user do |f| %>
@@ -32,3 +34,4 @@
 <% end %>
 
 <%= button_to "Dozadu", users_path, :method => "get" %> <br>
+</body>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'type', to: 'bookings#type', as: 'type'
   get 'ski_instructors', to: 'instructors#ski_instructors', as: 'ski_instructors'
   get 'snb_instructors', to: 'instructors#snb_instructors', as: 'snb_instructors'
+  get 'kontakt', to: 'general#kontakt', as: 'kontakt'
+  get 'cennik', to: 'general#cennik', as: 'cennik'
 
   resources :users, :only => [:create, :index, :new] do
     resources :bookings
@@ -21,6 +23,12 @@ Rails.application.routes.draw do
     resources :bookings
     member do
       get :reserved
+    end
+  end
+
+  namespace :admin do
+    resources :users do
+      resources :bookings
     end
   end
 

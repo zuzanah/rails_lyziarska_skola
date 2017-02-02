@@ -19,10 +19,10 @@
 @import "bootstrap";
 table {
     border: 1px;
-    background-color: #b2dfdb;
+    background-color: #e0f7fa;
 }
 th {
-    background-color: #00897b !important;
+    background-color: #00bfa5 !important;
     color: black;
     border: 1px;
 } 
@@ -36,6 +36,13 @@ body.background {
     background-size: 100%;
     display:block;
 }
+body.background-blue {
+    background: url('bg_blue.jpg');
+    width: 100%;
+    height: 0;
+    background-size: 100%;
+    display:block;
+}
 .btn {
     background: #ef6c00;
     padding: 10px 12px;
@@ -44,4 +51,3 @@ body.background {
     text-transform: uppercase;
     border: 1px solid #00897b;
 }
-

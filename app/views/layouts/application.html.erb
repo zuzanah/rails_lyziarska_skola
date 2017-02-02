@@ -19,18 +19,20 @@
                    <% if current_user %>
                      <div align="right">Prihlásený ako <%= current_user.nickname %>. <%= link_to "Odhlásiť", logout_path, {:style=>'color:#eceff1;'} %></div>
                    <% else %>
-                     <div align="right"><%= link_to "Registrácia", signup_path %> / <%= link_to "Prihlásiť", login_path %></div>
+                     <div align="right"><%= link_to "Registrácia", signup_path, {:style=>'color:#eceff1;'} %> / <%= link_to "Prihlásiť", login_path, {:style=>'color:#eceff1;'} %></div>
                    <% end %>
                    </br>
                  </font>
                  </div>
-               <%= link_to "Domov", users_path, {:style=>'color:#263238;', :class => "btn"} %> &nbsp
-               <%= link_to "Hodnotenie", ratings_path, {:style=>'color:#263238;', :class => "btn"} %> &nbsp
-               <%= link_to "Aktuality", skinews_index_path, {:style=>'color:#263238;', :class => "btn"} %> &nbsp
-               <%= link_to "Inštruktori", instructors_path, {:style=>'color:#263238;', :class => "btn"} %> &nbsp              
-               <%= link_to "Rezervovať lekciu", (user ? type_path : signup_path), {:style=>'color:#263238;', :class => "btn"} %> &nbsp 
+               <%= link_to "Domov", users_path, {:style=>'color:#263238;', :class => "btn"} %>
+               <%= link_to "Hodnotenie", ratings_path, {:style=>'color:#263238;', :class => "btn"} %>
+               <%= link_to "Aktuality", skinews_index_path, {:style=>'color:#263238;', :class => "btn"} %>
+               <%= link_to "Inštruktori", instructors_path, {:style=>'color:#263238;', :class => "btn"} %>           
+               <%= link_to "Cennik", cennik_path, {:style=>'color:#263238;', :class => "btn"} %>
+               <%= link_to "Kontakt", kontakt_path, {:style=>'color:#263238;', :class => "btn"} %>
+               <%= link_to "Rezervovať lekciu", (user ? type_path : signup_path), {:style=>'color:#263238;', :class => "btn"} %>	
                <% if user %>
-                 <%= link_to "Moje rezervácie", user_bookings_path(user), {:style=>'color:#263238;', :class => "btn"} %> &nbsp
+                 <%= link_to "Moje lekcie", user_bookings_path(user), {:style=>'color:#263238;', :class => "btn"} %>
                <% end %>
                <%= yield %>
              </h6>

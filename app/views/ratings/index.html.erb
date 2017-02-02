@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 
 <h1>Hodnotenia</h1>
 
-<table>
+<table class="table table-bordered table-stripped">
   <thead>
     <tr>
       <th>Hodnotenie</th>
@@ -28,3 +29,4 @@
 
 <%= button_to "Ohodnoťte nás", new_rating_path, :method => "get" %> <br>
 <%= button_to "Dozadu", root_path, :method => "get" %> <br>
+</body>

@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @user_bookings = @user.bookings.order("startdate asc, starttime asc")
+    @user_bookings = @user.bookings.where("startdate >= ?",Date.today).sort_by{ |b| [b.startdate, b.starttime] }
   end
 
   def new

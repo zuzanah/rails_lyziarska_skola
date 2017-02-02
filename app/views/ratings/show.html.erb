@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 
 <h6>
   <strong>Hodnotenie:</strong>
@@ -12,7 +13,7 @@
 <% if @comments.empty? %>
  <p> Hodnotenie nemá žadne komentáre.</p>
 <% else %>
-  <table>
+  <table class="table table-bordered table-stripped">
     <thead>
       <tr>
         <th>Komentár</th>
@@ -34,5 +35,5 @@
 <% end %>
 <%= button_to "Pridať komentár", new_rating_rcomment_path(@rating), :method => "get" %> <br>
 <%= button_to "Dozadu", ratings_path, :method => "get" %> <br>
-
+</body>
 

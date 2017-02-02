@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 
 <p>
   <strong>Meno:</strong>
@@ -13,3 +14,4 @@
 <%= current_user ? (button_to 'Rezervovať lekciu', new_instructor_booking_path(@instructor), :method => "get") : () %>
 <br>
 <%= button_to "Dozadu", instructors_path, :method => "get" %> 
+</body>

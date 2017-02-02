@@ -1,7 +1,10 @@
-<h3>Zvoľte si typ lekcie:</h3>
-
-<%= link_to "Lyže", ski_instructors_path, class: 'btn btn-warning' %> &nbsp
-<%= link_to "Snowboard", snb_instructors_path, class: 'btn btn-warning' %> &nbsp
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
+<h3><strong>Zvoľte si lekciu lyžovania alebo snowboardingu:</strong></h3><br>
+<div align="center">
+<%= link_to(image_tag("skiing.gif", :width => 400), ski_instructors_path) %> &nbsp &nbsp &nbsp
+<%= link_to(image_tag("snb.jpg", :width => 400), snb_instructors_path) %></div>
 <br>
 <br>
 <%= button_to "Dozadu", root_path, :method => "get" %>
+</body>

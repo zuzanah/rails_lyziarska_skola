@@ -1,7 +1,9 @@
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 <h1>Inštruktori lyžovania</h1>
 <h3>Zvoľte inštruktora</h3>
 
-<table>
+<table class="table table-bordered table-stripped">
         <thead>
           <tr>
             <th>Meno</th>
@@ -22,3 +24,4 @@
 </table>
 
 <%= button_to "Dozadu", type_path, :method => "get" %> 
+</body>

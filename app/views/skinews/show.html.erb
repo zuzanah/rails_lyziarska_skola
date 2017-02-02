@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+<body class="background-blue">
+<p id="notice" style="color:white;"><%= notice %></p>
 <p>
   <strong>Názov:</strong>
   <%= @skinews.title %>
@@ -11,3 +11,4 @@
 </p>
 
 <%= button_to "Dozadu", skinews_index_path, :method => "get" %> <br>
+</body>
