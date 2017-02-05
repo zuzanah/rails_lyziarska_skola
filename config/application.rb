@@ -5,6 +5,13 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: db/production.postgresql
+  pool: 5
+  username: test_postgre
+  password:
 
 module LyziarskaSkola
   class Application < Rails::Application
