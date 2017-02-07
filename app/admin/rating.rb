@@ -3,9 +3,9 @@ ActiveAdmin.register Rating do
   config.clear_action_items!
   menu label: "Hodnotenia", priority: 3
   permit_params :body, :user_id
-  filter :user, label: 'Užívateľ', :as => :select, :collection => User.all.map(&:email)
-  filter :body, label: 'Obsah'
-  filter :created_at, label: 'Čas vloženia'
+  #filter :user_id, label: 'Užívateľ', :as => :select, :collection => User.all.map(&:email)
+  #filter :body, label: 'Obsah'
+  #filter :created_at, label: 'Čas vloženia'
 
   belongs_to :user, :optional => true
 

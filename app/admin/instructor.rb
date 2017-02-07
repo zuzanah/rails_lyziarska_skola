@@ -1,7 +1,7 @@
 ActiveAdmin.register Instructor do
   menu label: "Inštruktori", priority: 6
   config.clear_action_items!
-  permit_params :name, :instructor_type
+  permit_params :name, :instructor_type, :id
   filter :id, label: 'ID'
   filter :name, label: 'Meno'
   filter :type, label: 'Typ'

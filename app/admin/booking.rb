@@ -2,8 +2,8 @@ ActiveAdmin.register Booking do
   permit_params :startdate, :starttime, :user_id, :instructor_id, :body, :_destroy
   config.sort_order = "startdate_asc"
   config.clear_action_items!
-  filter :instructor, label: 'Inštruktor'
-  filter :user, label: 'Užívateľ', :as => :select, :collection => User.all.map(&:email)
+#  filter :instructor, label: 'Inštruktor'
+#  filter :user, label: 'Užívateľ', :as => :select, :collection => User.all.map(&:email)
   filter :startdate, label: 'Dátum lekcie'
   filter :created_at, label: 'Čas vloženia'
   filter :updated_at, label: 'Čas zmeny'

@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   menu label: "Užívatelia", priority: 2
-  permit_params :nickname, :email
+  permit_params :nickname, :email, :id
   config.clear_action_items!
   filter :id, label: 'ID'
   filter :email, label: 'E-mail'
