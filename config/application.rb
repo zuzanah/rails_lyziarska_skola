@@ -13,5 +13,6 @@ module LyziarskaSkola
     # -- all .rb files in that directory are automatically loaded.
     config.app_generators.scaffold_controller = :scaffold_controller
     config.active_record.time_zone_aware_types = [:datetime]
+    config.assets.initialize_on_precompile = false
   end
 end
