@@ -1,3 +1,4 @@
+# Kontroler pre prihlasovanie uzivatelov
 class SessionsController < ApplicationController
   def new
   end
@@ -6,15 +7,15 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: "Úspešne prihlásený!"
+      redirect_to root_url, notice: 'Úspešne prihlásený!'
     else
-      flash.now.alert = "Neplatný e-mail alebo heslo!"
-      render "new"
+      flash.now.alert = 'Neplatný e-mail alebo heslo!'
+      render 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Úspešne odhlásený!"
+    redirect_to root_url, notice: 'Úspešne odhlásený!'
   end
 end

@@ -1,2 +1,3 @@
+# InstructorsHelper
 module InstructorsHelper
 end

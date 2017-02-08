@@ -1,2 +1,3 @@
+# BookingsHelper
 module BookingsHelper
 end

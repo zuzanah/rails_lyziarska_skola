@@ -1,21 +1,21 @@
 ActiveAdmin.register User do
-  menu label: "Užívatelia", priority: 2
+  menu label: 'Užívatelia', priority: 2
   permit_params :nickname, :email, :id
   config.clear_action_items!
   filter :id, label: 'ID'
   filter :email, label: 'E-mail'
   filter :nickname, label: 'Užívateľské meno'
 
-  index :title => 'Užívatelia' do
+  index title: 'Užívatelia' do
     column :id
-    column "e-mail", :email
-    column "Užívateľské meno", :nickname
+    column 'e-mail', :email
+    column 'Užívateľské meno', :nickname
     actions defaults: false do |user|
-      link_to "Rezervácie", admin_user_bookings_path(user), class: "member_link"
+      link_to 'Rezervácie', admin_user_bookings_path(user), class: 'member_link'
     end
   end
 
-  show :id => :email do     
+  show id: :email do
     attributes_table do
       row :nickname
       row :email
@@ -24,5 +24,4 @@ ActiveAdmin.register User do
       end
     end
   end
-
 end

@@ -1,3 +1,4 @@
+# Kontroler pre komentare k hodnoteniam
 class RcommentsController < ApplicationController
   before_filter :authorize
 
@@ -15,7 +16,7 @@ class RcommentsController < ApplicationController
     @rating = Rating.find(params[:rating_id])
     @rcomment = @rating.rcomments.create(rcomment_params)
     @rcomment.user_id = @user.id
-    
+
     respond_to do |format|
       if @rcomment.save
         format.html { redirect_to @rating }
@@ -27,7 +28,7 @@ class RcommentsController < ApplicationController
 
   private
 
-    def rcomment_params
-      params.require(:rcomment).permit(:body, :user, :rating)
-    end
+  def rcomment_params
+    params.require(:rcomment).permit(:body, :user, :rating)
+  end
 end

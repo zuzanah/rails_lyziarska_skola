@@ -1,2 +1,3 @@
+# RcommentsHelper
 module RcommentsHelper
 end

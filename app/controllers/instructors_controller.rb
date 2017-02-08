@@ -1,3 +1,4 @@
+# Kontroler pre instruktorov
 class InstructorsController < ApplicationController
   def index
     @instructors = Instructor.all
@@ -29,7 +30,7 @@ class InstructorsController < ApplicationController
 
   private
 
-    def instructor_params
-      params.require(:instructor).permit(:name, :instructor_type)
-    end
+  def instructor_params
+    params.require(:instructor).permit(:name, :instructor_type)
+  end
 end

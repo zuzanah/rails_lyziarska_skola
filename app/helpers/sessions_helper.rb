@@ -1,2 +1,3 @@
+# SessionsHelper
 module SessionsHelper
 end

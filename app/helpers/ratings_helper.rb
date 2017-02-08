@@ -1,2 +1,3 @@
+# RatingsHelper
 module RatingsHelper
 end
