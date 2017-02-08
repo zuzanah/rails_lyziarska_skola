@@ -9,7 +9,9 @@ ActiveAdmin.register_page "Dashboard" do
             table_for Rating.order("created_at desc").limit(5) do
               column "Užívateľ", :user, :sortable => :user_id
               column "Hodnotenie", :body
-              column "Vložené", :created_at
+              column "Vložené" do |record|
+                record.created_at.strftime('%d.%m. %Y')
+              end
             end
             strong { link_to "Zobraziť všetky hodnotenia", admin_ratings_path }
           end
@@ -19,7 +21,9 @@ ActiveAdmin.register_page "Dashboard" do
             table_for Skinew.order("created_at desc").limit(5) do
               column "Nazov", :title
               column "Obsah", :body
-              column "Vložené", :created_at
+              column "Vložené" do |record|
+                record.created_at.strftime('%d.%m. %Y')
+              end
             end
             strong { link_to "Zobraziť všetky aktuality", admin_skinews_index_path }
           end
