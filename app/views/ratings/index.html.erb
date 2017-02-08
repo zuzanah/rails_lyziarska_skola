@@ -18,7 +18,7 @@
       <tr>
         <td><%= rating.body %></td>
         <td><%= rating.user.nickname %></td>
-        <td><%= rating.created_at.strftime("%b %d, %Y") %></td>
+        <td><%= rating.created_at.strftime("%d.%m %Y, %H:%M") %></td>
         <td><%= link_to 'Zobraziť', rating %></td>
       </tr>
     <% end %>

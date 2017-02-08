@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @skinews = Skinew.all.limit(3)
+    @skinews = Skinew.all.order("created_at desc").limit(3)
   end
 
   def new
